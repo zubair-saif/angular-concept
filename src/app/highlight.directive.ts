@@ -9,15 +9,15 @@ export class HighlightDirective {
   constructor(private el: ElementRef) {
   }
 
-  @HostListener('mouseenter') onMouseEnter() {
+  @HostListener('mouseenter') onMouseEnter(): void {
     this.highlight(this.appHighlight);
   }
   
-  @HostListener('mouseleave') onMouseLeave() {
+  @HostListener('mouseleave') onMouseLeave(): void {
     this.highlight('');
   }
   
-  private highlight(color: string) {
+  private highlight(color: string): void {
     this.el.nativeElement.style.backgroundColor = color;
   }
 }
